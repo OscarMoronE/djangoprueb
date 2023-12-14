@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}
+    EasyTravel
+{% endblock  %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/post.css" %} "/>
+    <link rel="stylesheet" href="{% static "blog/index.css" %}"/>
+{% endblock  %}
+
+
+{% block content %}    
+    <section id="welcome">
+        <header>
+            <img src="{% static "blog/images/LOGO_1.png" %} " alt="Oscar - The Author Of This Blog"/>
+            
+
+            <h2>EasyTravel</h2>
+        </header>
+        <p>Busca Tu Próximo Destino!</p>
+    </section>
+
+    <section id="latest-posts">
+        <h2>Tus Últimos Destinos  </h2>
+            
+        <ul>
+            {% for post in posts  %}
+                {% include "blog/includes/post.html" %}
+            {% endfor %}
+        </ul>
+
+    </section>
+    <section>
+        <h2>¿Quienes somos?</h2>
+        <p>
+            Somos EasyTravel, una innovadora compañía dedicada a simplificar y mejorar la experiencia de viajes. </p>
+        <p>Con un enfoque centrado en el usuario, ofrecemos una aplicación integral que facilita la planificación de viajes, desde la exploración de destinos hasta la reserva de alojamiento y actividades. Nuestra visión es transformar la industria del turismo mediante soluciones tecnológicas intuitivas, seguridad de datos de primera categoría y colaboraciones estratégicas con empresas de turismo y transporte. En EasyTravel, nos esforzamos por personalizar cada experiencia de viaje, brindando a nuestros usuarios la confianza y comodidad que buscan en sus travesías. ¡Descubre el viaje perfecto con EasyTravel!</p>
+    </section>
+    
+    
+{% endblock  %}
